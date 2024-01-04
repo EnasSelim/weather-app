@@ -1,0 +1,210 @@
+<!Doctype html>
+<html>
+
+<head>
+    <meta charset="ntf-8" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <title>Weather App</title>
+
+</head>
+<body>
+   
+   <nav class="navbar navbar-expand-lg py-5">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="imgs/logo.png" alt="" class="logo me-2">
+        <div class="logo-type">
+            <h1 class="site-title m-0">Weather</h1>
+            <small class="site-description ">tagline goes here</small>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+          <li class="nav-item me-3">
+            <a class="nav-link active px-4 " aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link px-4 " href="#">News</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link px-4 " href="#">Live cameras</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link px-4 " href="#">Photos</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link px-4 " href="#" id="contact">Contact</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section  class="section">
+  <div class="home d-block">
+    <div class="container">
+      <form class="find-location mb-5 position-relative">
+          <input type="text" placeholder="Find your location..." id="search" class=" w-100 mt-5 rounded-5 border-0">
+          <input type="button" value="Find" id="submit" class="position-absolute border-0 px-5 rounded-5 text-white">
+      </form>
+      <div class="wheather-data rounded-4">
+      <div class="row gx-0">
+        <div class="col-md-4">
+          
+            <div class="today">
+              <div class="header d-flex justify-content-between px-2 pt-3 ">
+                  <p id="day">Tuesday</p>
+                  <p id="date">2January</p>
+              </div>
+              <div class="body-wheather py-4 ps-3 pe-5" id="current">
+                  <div class="location">Cairo</div>
+                  <div class="degree text-white d-flex">
+                      <div class="num">20<sup>o</sup>C</div>
+                    
+                      <div class="icon ms-5">
+                          <img src="" alt="" width="90">
+                      </div>	
+                  
+                  </div>
+                  <div class="custom my-2">Sunny</div>
+                  <span><img src="./imgs/icon-umberella.png" alt="" class="me-1">20%</span>
+                  <span><img src="./imgs/icon-wind.png" alt="" class="me-1">18km/h</span>
+                  <span><img src="./imgs/icon-compass.png" alt="" class="me-1">East</span>
+                  </div>
+            </div>
+          
+        </div>
+        <div class="col-md-4">
+          
+          <div class="after-day text-center diff-bg h-100">
+            <div class="header px-2 pt-3 d-flex justify-content-center">
+                <p class="nextDay">Tuesday</p>
+            </div>
+            <div class="body-wheather py-4 " >
+              <div class="icon py-3 nextDayIcon" >
+                  
+              </div>
+              <div class="degree text-white">
+                  <div class="maxDgree">20<sup>o</sup>C</div>
+              </div>
+              <small class="minDgree">14.3<sup>o</sup></small>
+                
+                <div class="custom mt-2 mb-5  mt-4 nextDayDesc">Overcast</div>
+                
+                </div>
+          </div>
+        
+      </div>
+      <div class="col-md-4">
+          
+          <div class="after-day text-center">
+            <div class="header px-2 pt-3 d-flex justify-content-center">
+                <p class="nextDay">Tuesday</p>
+            </div>
+            <div class="body-wheather py-4 " id="current">
+              <div class="icon py-3 nextDayIcon">
+                  
+              </div>
+              <div class="degree text-white">
+                  <div class="maxDgree">20<sup>o</sup>C</div>
+              </div>
+              <small class="minDgree">14.3<sup>o</sup></small>
+                
+                <div class="custom mt-2 mb-5  mt-4 nextDayDesc">Overcast</div>
+                
+                </div>
+          </div>
+        
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="contact mt-4 pt-3 d-none">
+    <div class="container">
+      <div class="cont-input py-3 px-3 rounded-5">
+        <a href="index.html">Home  </a>
+        <i class="fa-solid fa-arrow-right mx-3"></i>
+        <span class="text-white">  Contact</span>
+      </div>
+      <div class="row my-5">
+      <div class="col-md-5">
+        <div class="contact-details p-3 rounded-4 mt-4">
+          <div id="map"></div>
+          <div class="contact-info mt-2">
+            <address>
+              <img src="imgs/icon-marker.png" alt="" class="me-2">
+              <span>Company Name INC. </span><br>
+                    <span class="ms-4">2803 Avenue Street, Los Angeles</span>
+            </address>
+            
+            <a href="#" class="me-3"><img src="imgs/icon-phone.png" alt="" class="me-2">+1 800 314 235</a>
+            <a href="#"><img src="imgs/icon-envelope.png" alt="" class="me-2">contact@companyname.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-6 p-3">
+        <h2 class="mt-1 text-white">Contact us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur inventore ducimus, facilis, numquam id soluta omnis eius recusandae nesciunt vero repellat harum cum. Nisi facilis odit hic, ipsum sed!</p>
+        <form action="#" class="contact-form">
+          <div class="row">
+            <div class="col-md-6"><input type="text" placeholder="Your name..." ></div>
+            <div class="col-md-6"><input type="text" placeholder="Email Addresss..."></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6"><input type="text" placeholder="Company name..."></div>
+            <div class="col-md-6"><input type="text" placeholder="Website..."></div>
+          </div>
+          <textarea name="" placeholder="Message..."></textarea>
+          <div class="text-end">
+            <input type="submit" placeholder="Send message" class="text-white py-2 px-4 border-0 rounded-5">
+          </div>
+        </form>
+
+      </div>
+      </div>
+    </div>
+  </div>
+  <footer class="mt-5">
+   <div class="container">
+   <div class="row">
+    <div class="col-md-8">
+      <form class="find-location mb-4 position-relative">
+        <input type="text" placeholder="Enter your email to subscribe..." id="search" class="w-100 mt-5 rounded-5 border-0">
+        <input type="button" value="Subscribe" id="submit" class="position-absolute border-0 px-5 rounded-5 text-white">
+    </form>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+      <div class=" p-4 d-flex h-100 align-items-center">
+        <a href="#" class="p-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-facebook-f fa-xl"></i></a>
+        <a href="#" class="p-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-twitter fa-xl"></i></a>
+        <a href="#" class="p-2 me-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-google-plus fa-xl"></i></a>
+        <a href="#" class="p-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-pinterest fa-xl"></i></a>
+      </div>
+    </div>
+   </div>
+   <p class=" pb-5 pt-2">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+   </div>
+   
+  </footer>
+  </section>
+  
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+body {
+    color: #bfc1c8;
+    font-family: "Roboto", "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+    background: #1e202b;
+}
+.navbar-brand ,.nav-link ,.navbar-toggler{
+    color: #fff !important;
+}
+
+.navbar-nav li{transition: all .1s;
+    border: 2px solid #1e202b}
+
+.navbar-nav li:hover{
+    border: 2px solid #009ad8;
+    border-radius: 30px;
+}
+.nav-item a:hover{color: #009ad8 !important;}
+h1{
+    font-size: 16px;
+    font-weight: 700;
+}
+small{
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 15px;
+    color: #bfc1c8;
+}
+ .logo, .logo-type {
+    display: inline-block;
+    vertical-align: middle;
+}
+.section{
+    background-image: url(.././imgs/banner.png);
+    height: 350px;
+    background-size: cover;
+}
+input[type="text"] {
+    padding: 20px 50px 20px 20px;
+    background: #1e202b;
+    color: white;
+    outline: 0;
+}
+input[type="button"] {
+    top: 48%;
+    right: 5px;
+    bottom: 5px;
+    background: #009ad8;
+}
+.wheather-data{
+    background: #323544;
+}
+.header{
+    background: rgba(0, 0, 0, 0.1);
+    line-height: 21px;
+    font-weight: 400;
+}
+
+.location{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+}
+.degree{
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 135px;
+}
+.custom{
+   color: #009ad8;
+}
+ span{
+    margin-right: 20px;
+}
+.diff-bg{
+    background-color: #262936
+}
+.after-day .degree{
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+}
+footer{
+    background-color: #262936;
+}
+footer a{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: all .3s;
+}
+footer a:hover{
+    color: #fff;
+    background-color: #009ad8;
+
+}
+.cont-input{
+    background-color: #262936;
+}
+.contact a{
+    text-decoration: none;
+    color: #bfc1c8;
+}
+.contact-details{
+    background-color: #262936;
+}
+#map {
+    height: 220px;
+}
+.contact h2{
+    font-size: 36px;
+}
+.contact-form input:not([type="submit"]), .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    color: white;
+    border: 2px solid #393c48;
+    border-radius: 30px;
+    background: transparent;
+}
+.contact-form input:not([type="submit"]):hover,
+.contact-form textarea:hover{
+    border: 2px solid #009ad8;
+ }
+ .contact-form textarea {
+    min-height: 150px;
+}
+.contact-form input[type="submit"]{
+    background-color: #009ad8;
+}
